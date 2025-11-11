@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: LoadBalancer # k3s will handle this automatically!
+  type: ClusterIP  # <-- CHANGE THIS LINE
   selector:
     app: nginx
   ports:
