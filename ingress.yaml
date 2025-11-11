@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    # This tells k3s's built-in Traefik controller to manage this Ingress
+    kubernetes.io/ingress.class: "traefik"
+spec:
+  rules:
+  - host: ec2-65-1-210-12.ap-south-1.compute.amazonaws.com  # <-- IMPORTANT: USE YOUR EC2 PUBLIC DNS
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
