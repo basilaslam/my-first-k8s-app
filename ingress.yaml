@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-  - host: previewhub.online  # <-- IMPORTANT: USE YOUR EC2 PUBLIC DNS
+  - host: previewbay.online  # <-- IMPORTANT: USE YOUR EC2 PUBLIC DNS
     http:
       paths:
       - path: /
